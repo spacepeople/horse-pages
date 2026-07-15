@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="保存済みJRAデータから表示する馬プロフィールと過去走">
+  <meta name="robots" content="noindex,nofollow">
+  <title>馬プロフィール | JRA予想ビュー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">JRA予想ビュー</a>
+    <nav aria-label="ページ"><a href="latest_prediction.html">最新予想</a><a href="index.html#results">結果</a><a href="index.html#history">履歴</a></nav>
+  </header>
+  <main>
+    <section class="hero horse-hero">
+      <p class="eyebrow">HORSE PROFILE</p>
+      <h1 id="horse-name">読み込み中</h1>
+      <p>SQLiteに保存済みの値だけを表示します。空欄は未取得です。</p>
+    </section>
+    <section id="horse-status" class="metadata"><p class="notice">馬データを読み込んでいます。</p></section>
+    <section id="horse-profile" hidden>
+      <div class="section-heading"><div><p class="eyebrow">PROFILE</p><h2>保存済みプロフィール</h2></div></div>
+      <dl class="profile-grid"></dl>
+    </section>
+    <section id="horse-history" hidden>
+      <div class="section-heading"><div><p class="eyebrow">RACE HISTORY</p><h2>保存済み過去走</h2></div><span id="history-count"></span></div>
+      <div class="table-scroll" role="region" aria-label="過去走一覧" tabindex="0">
+        <table class="horse-history-table">
+          <thead><tr><th>日付</th><th>場</th><th>R</th><th>レース名</th><th>条件</th><th>馬場</th><th>馬番</th><th>騎手</th><th>斤量</th><th>馬体重</th><th>人気</th><th>単勝</th><th>着順</th><th>タイム</th><th>上り3F</th><th>通過順</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>取得できていない血統・体重・戦績は推測しません。自動投票機能はありません。</footer>
+  <script src="horse.js" defer></script>
+</body>
+</html>

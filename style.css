@@ -16,6 +16,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -28,6 +29,7 @@ body {
 }
 
 a { color: var(--accent); }
+.horse-link { font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 
 .site-header {
   position: sticky;
@@ -111,6 +113,18 @@ th { position: sticky; top: 0; background: var(--surface-muted); font-size: 12px
 .index-link.disabled { opacity: .62; }
 
 .history-list { display: grid; gap: 10px; }
+.archive-tree { display: grid; gap: 14px; }
+.archive-year, .archive-month { border-top: 1px solid var(--border); }
+.archive-year > summary, .archive-month > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; list-style: none; }
+.archive-year > summary::-webkit-details-marker, .archive-month > summary::-webkit-details-marker { display: none; }
+.archive-year > summary { padding: 16px 2px; font-size: 20px; font-weight: 800; }
+.archive-month > summary { padding: 13px 8px; color: var(--accent); font-size: 17px; font-weight: 760; }
+.archive-year > summary::before, .archive-month > summary::before { content: "+"; width: 20px; color: var(--muted); }
+.archive-year[open] > summary::before, .archive-month[open] > summary::before { content: "−"; }
+.archive-year > summary span, .archive-month > summary span { flex: 1; }
+.archive-year > summary small, .archive-month > summary small { color: var(--muted); font-size: 12px; font-weight: 650; }
+.archive-months { padding: 0 0 14px 14px; }
+.archive-month-items { display: grid; gap: 10px; padding: 2px 0 14px 10px; }
 .history-item { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
 .history-date { margin: 0; font-size: 19px; font-weight: 780; }
 .history-status { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
@@ -129,6 +143,9 @@ th { position: sticky; top: 0; background: var(--surface-muted); font-size: 12px
 .payout-detail { margin-top: 12px; border-top: 1px solid var(--border); }
 .payout-detail summary { cursor: pointer; padding: 12px 0; font-weight: 750; }
 .payout-detail p { margin: 0; overflow-wrap: anywhere; }
+.profile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0; }
+.profile-grid > div { padding: 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
+.horse-history-table { min-width: 1450px; }
 
 footer { padding: 24px 18px calc(24px + env(safe-area-inset-bottom)); color: var(--muted); text-align: center; font-size: 12px; }
 
@@ -136,7 +153,7 @@ footer { padding: 24px 18px calc(24px + env(safe-area-inset-bottom)); color: var
   .site-header { align-items: flex-start; }
   .site-header nav { gap: 10px; }
   section { padding: 24px 14px; }
-  .metadata dl, .pick-grid, .check-list { grid-template-columns: 1fr; }
+  .metadata dl, .pick-grid, .check-list, .profile-grid { grid-template-columns: 1fr; }
   .pick-card { padding: 14px; }
   .section-heading { align-items: start; }
   .index-link { align-items: flex-start; flex-direction: column; }
@@ -144,6 +161,8 @@ footer { padding: 24px 18px calc(24px + env(safe-area-inset-bottom)); color: var
   .history-item { align-items: flex-start; flex-direction: column; }
   .history-actions { width: 100%; justify-content: flex-start; }
   .history-actions .button-link { flex: 1 1 140px; }
+  .archive-months { padding-left: 8px; }
+  .archive-month-items { padding-left: 4px; }
   .result-card { padding: 14px; }
 }
 
