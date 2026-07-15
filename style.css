@@ -143,6 +143,16 @@ th { position: sticky; top: 0; background: var(--surface-muted); font-size: 12px
 .payout-detail { margin-top: 12px; border-top: 1px solid var(--border); }
 .payout-detail summary { cursor: pointer; padding: 12px 0; font-weight: 750; }
 .payout-detail p { margin: 0; overflow-wrap: anywhere; }
+.user-review { margin-top: 18px; padding: 16px; border-left: 4px solid var(--accent); background: var(--surface-muted); }
+.user-review h3 { margin: 0; font-size: 1.05rem; }
+.user-review-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.user-review-heading span { color: var(--muted); font-size: .82rem; }
+.user-review dl { display: grid; gap: 10px; margin: 14px 0 0; }
+.user-review dl div { display: grid; grid-template-columns: minmax(82px, 110px) 1fr; gap: 12px; }
+.user-review dt { color: var(--muted); font-weight: 700; }
+.user-review dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.user-review-empty p { color: var(--muted); }
+.button-link.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
 .profile-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 0; }
 .profile-grid > div { padding: 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); }
 .horse-history-table { min-width: 1450px; }
