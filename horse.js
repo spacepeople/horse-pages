@@ -39,7 +39,7 @@
       const profileSection = document.getElementById("horse-profile");
       const profileGrid = profileSection.querySelector("dl");
       const fields = [
-        ["性齢", horse.sex_age], ["父", horse.sire], ["母父", horse.damsire],
+        ["性齢", horse.sex_age], ["父", horse.sire], ["母", horse.dam], ["母父", horse.damsire],
         ["調教師", horse.trainer], ["脚質", horse.running_style],
         ["最新馬体重", horse.latest_body_weight], ["馬体重増減", horse.latest_body_weight_diff],
       ];
